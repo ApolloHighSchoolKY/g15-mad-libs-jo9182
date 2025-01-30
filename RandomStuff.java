@@ -17,6 +17,15 @@ public class RandomStuff {
 
     	System.out.println(y);
 
+
+		//Range -3 to 8 : 12 possible numbers
+		int z = (int)(Math.random()*12 - 3);
+
+		System.out.println(z);
+
+
+		//Range 13 to 27
+		System.out.println(rand.nextInt(15)+13);
     }
 
 
