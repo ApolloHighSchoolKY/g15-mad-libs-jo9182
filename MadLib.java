@@ -48,24 +48,23 @@ public class MadLib
 		//Chop up the string
 			while(chopper.hasNext()){
 				next = chopper.next();
-				story = "";
 				if(new String(next).equals("#")){
 					story += " " + getRandomNoun();
-					System.out.println(story);
+
 				}
 
 				else if(new String(next).equals("&")){
 					story += " " + getRandomAdjective();
-					System.out.println(story);
+
 				}
 
 				else if(new String(next).equals("@")){
 					story += " " + getRandomVerb();
-					System.out.println(story);
+
 				}
 				else{
 					story += " " + next;
-					System.out.println(story);
+
 				}
 			}
 				//If what was read in is one of the symbols, find a random
@@ -157,6 +156,6 @@ public class MadLib
 
 	public String toString()
 	{
-		return "";
+		return "" + story;
 	}
 }
