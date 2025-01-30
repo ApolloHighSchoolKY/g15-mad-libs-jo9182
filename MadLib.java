@@ -28,6 +28,8 @@ public class MadLib
 
 	public MadLib(String fileName)
 	{
+		String next = "";
+
 		//load stuff
 		loadNouns();
 		loadAdjectives();
@@ -38,25 +40,32 @@ public class MadLib
 			//story using the symbols to tell you the parts of speech
 			Scanner reader = new Scanner(new File(fileName));
 			
+			String ogStory = reader.nextLine();
 
 			//While there is more of the story, read in the word/symbol
-			Scanner chopper = new Scanner(story);
+			Scanner chopper = new Scanner(ogStory);
 
 		//Chop up the string
 			while(chopper.hasNext()){
-				if(new String(chopper.next()).equals("#")){
-					story += getRandomNoun();
+				next = chopper.next();
+				story = "";
+				if(new String(next).equals("#")){
+					story += " " + getRandomNoun();
+					System.out.println(story);
 				}
 
-				else if(new String(chopper.next()).equals("&")){
-					story += getRandomAdjective();
+				else if(new String(next).equals("&")){
+					story += " " + getRandomAdjective();
+					System.out.println(story);
 				}
 
-				else if(new String(chopper.next()).equals("@")){
-					story += getRandomVerb();
+				else if(new String(next).equals("@")){
+					story += " " + getRandomVerb();
+					System.out.println(story);
 				}
 				else{
-					story += reader.next();
+					story += " " + next;
+					System.out.println(story);
 				}
 			}
 				//If what was read in is one of the symbols, find a random
@@ -148,6 +157,6 @@ public class MadLib
 
 	public String toString()
 	{
-		return "" + story;
+		return "";
 	}
 }
